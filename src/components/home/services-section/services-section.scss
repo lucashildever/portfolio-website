@@ -1,0 +1,8 @@
+@import './../../../base.scss';
+
+.services-section {
+    @include sectionDefaults;
+    div h2 {
+        width: 145%;
+    }
+}

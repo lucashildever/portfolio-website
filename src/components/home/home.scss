@@ -1,0 +1,31 @@
+@import '../../base.scss';
+
+@mixin grid-defaults($first-grid) {
+    display: grid;
+    row-gap: 30px;
+    div {
+        background-color: $bg-color;
+    }
+
+    @if $first-grid {
+        grid-template-rows: 2;
+    } @else {
+        grid-template-rows: 2.9fr 1fr;
+    }
+}
+
+.home-layout {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 2fr;
+    padding: 30px;
+    gap: 30px;
+
+    .first-grid {
+        @include grid-defaults($first-grid: true);
+    }
+    
+    .second-grid {
+        @include grid-defaults($first-grid: false);
+    }
+}

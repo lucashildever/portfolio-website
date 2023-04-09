@@ -1,0 +1,29 @@
+.project-section {
+    padding: 35px;
+    display: flex;
+    align-items: center;
+
+    div.project-sec-content {
+        width: 40%;
+        z-index: 1;
+
+        h2 {
+            font-size: 2.3rem;
+            line-height: 90%;
+            width: 315%;
+        }
+        p {
+            font-size: 0.4rem;
+            margin-top: 35px;
+            margin-bottom: 35px;
+            text-align: justify;
+        }
+    }
+
+    div.project-sec-img {
+        height: 100%;
+        width: 100%;
+        background-color: grey;
+        margin-left: 35px;
+    }
+}

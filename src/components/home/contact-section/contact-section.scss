@@ -1,0 +1,15 @@
+@import './../../../base.scss';
+
+.contact-section {
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    h2 {
+        margin-left: 35px;
+        font-size: $sec-font-size;
+    }
+
+    a.contact-btn {
+        width: 32%;
+    }
+}
