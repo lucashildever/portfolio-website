@@ -1,0 +1,17 @@
+@import '../../base.scss';
+
+a.page-arrow-btn {
+    font-size: $txt-font-size;
+    color: white;
+    cursor: pointer;
+
+    img {
+        height: 15px;
+        transform: translateY(3px) rotate(180deg);
+        margin-left: 7px;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
