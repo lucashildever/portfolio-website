@@ -10,6 +10,7 @@ import About from './components/about/About'
 import Projects from './components/projects/Projects'
 import Services from './components/services/Services'
 import Contact from './components/contact/Contact'
+import Home from './components/home/Home'
 
 function App() {
 
@@ -18,6 +19,10 @@ function App() {
     element: <Layout/>,
     errorElement: <ErrorPage/>,
     children: [
+      {
+        index: true,
+        element: <Home />,
+      },
       {
         path: 'about',
         element: <About />,
