@@ -1,0 +1,7 @@
+@import '../../base.scss';
+
+.projects-page {
+    @include pageDefaults;
+    overflow-y: auto;
+    padding-top: 50px;
+}
