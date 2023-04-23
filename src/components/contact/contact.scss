@@ -1,0 +1,51 @@
+@import '../../base.scss';
+
+.contact-page {
+    @include pageDefaults;
+
+    h2 {
+        font-size: $title-font-size;
+    }
+
+    div.contact-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 35px;
+
+        a {
+            color: white;
+            font-size: $txt-font-size;
+            cursor: pointer;
+
+            img.arrow-link-icon {
+                transform: rotate(140deg) translateY(-2px);
+                height: 15px;
+                margin-left: 7px;
+            }
+
+            img.github-icon {
+                height: 25px;
+                margin-right: 7px;
+                transform: translateY(5px);
+            }
+
+            img.linkedin-icon {
+                height: 25px;
+                margin-right: 7px;
+                transform: translateY(5px);
+            }
+
+            img.mail-icon {
+                height: 20px;
+                margin-right: 7px;
+                transform: translateY(5px);
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+    }
+}
