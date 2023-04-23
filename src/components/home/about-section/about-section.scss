@@ -1,5 +1,63 @@
-@import './../../../base.scss';
+@import '../../../base.scss';
+
+@mixin spinIconDefaults {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    height: 70px;
+    width: 70px;
+}
 
 .about-section {
-    @include sectionDefaults;
+    background-color: $bg-color;
+    position: relative;
+    padding: 35px;
+    margin-bottom: 30px;
+    width: calc(30vw - 45px);
+    height: calc(50vh - 45px);
+
+    span.spin-icon {
+        div.st {
+            @include spinIconDefaults;
+            background-color: white;
+            animation: rotate1 35s linear infinite;
+        }
+        
+        div.nd {
+            @include spinIconDefaults;
+            animation: rotate2 35s linear infinite;
+            transform: rotate(45deg);
+            border: solid 5px white;
+        }
+
+        @keyframes rotate1 { 
+            from { transform: rotate(0deg); } 
+            to { transform: rotate(360deg); } 
+        }
+
+        @keyframes rotate2 { 
+            from { transform: rotate(0deg); } 
+            to { transform: rotate(-360deg); } 
+        }
+    }
+
+    div.about-sec-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+
+        h2 {
+            font-size: $title-font-size;
+            margin-bottom: 25px;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        width: calc(100vw - 60px);
+        height: auto;
+        margin-right: 30px; 
+        margin-left: 30px;
+        margin-top: 30px; 
+    }
 }
