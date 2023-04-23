@@ -8,12 +8,20 @@ import ServicesSection from './services-section/ServicesSection'
 const Home = () => {
     return (
         <div className='home-layout'>
-            <div className='first-grid'>
-                <AboutSection/>
-                <ServicesSection/>
+            <div className='home-layout-content'>
+                <div className='left-column'>
+                    <AboutSection/>
+                    <ServicesSection/>
+                </div>
+                <div className='right-column'>
+                    <ProjectSection/>
+                    <ContactSection/>
+                </div>
             </div>
-            <div className='second-grid'>
+            <div className='home-layout-responsive'>
+                <AboutSection/>
                 <ProjectSection/>
+                <ServicesSection/>
                 <ContactSection/>
             </div>
         </div>
