@@ -1,0 +1,50 @@
+@import '../../base.scss';
+
+$margin-content: 50px;
+
+.project-template {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    border-bottom: solid 1px white;
+    padding-bottom: $margin-content;
+    margin-bottom: $margin-content;
+
+    h1 {
+        font-size: $big-title-font-size;
+        margin-bottom: $margin-content;
+    }
+    
+    p {
+        font-size: $txt-font-size;
+        margin-top: $margin-content;
+        margin-bottom: $margin-content;
+    }
+
+
+    div.project-btns {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            width: 47%;
+
+            button img {
+                height: 12px;
+                margin-left: 7px;
+                transform: rotate(-40deg);
+            }
+        }
+    }
+
+    div.project-img {
+        width: 100%;
+        height: 350px;
+        background-color: grey;
+        background-size: 100%;
+        background-position: center;
+        transition: ease 0.5s;
+    }
+}
