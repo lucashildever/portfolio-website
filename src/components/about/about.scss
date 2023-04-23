@@ -1,0 +1,36 @@
+@import '../../base.scss';
+
+.about-page {
+    @include pageDefaults;
+    justify-content: center;
+    
+    div.img-txt, p {
+        width: 370px;
+    }
+
+    p {
+        font-size: $txt-font-size;
+        text-align: justify;
+        margin-top: 25px;
+    }
+
+    p + p {
+        margin-bottom: 25px;
+    }
+
+    div.img-txt {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            height: 90px;
+            width: 90px;
+            object-fit: contain;
+        }
+    }
+
+    div > h2 {
+        font-size: $title-font-size;
+    }
+}
