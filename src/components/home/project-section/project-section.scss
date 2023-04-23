@@ -1,29 +1,79 @@
-.project-section {
-    padding: 35px;
+ @import '../../../base.scss';
+ 
+ .project-section {
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
+    background-color: $bg-color;
+    padding: 35px;
+    margin-bottom: 30px;
+    height: calc(75vh - 60px);
+   
     div.project-sec-content {
-        width: 40%;
-        z-index: 1;
-
-        h2 {
-            font-size: 2.3rem;
-            line-height: 90%;
-            width: 315%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        height: 100%;
+        align-items: center;
+        position: relative;
+        
+        h1 {
+            font-size: $big-title-font-size;
+            position: absolute;
+            top: 0px;
+            left: 0px;
         }
+        
         p {
-            font-size: 0.4rem;
-            margin-top: 35px;
-            margin-bottom: 35px;
+            font-size: 0.45rem;
             text-align: justify;
+            margin-bottom: 70px;
+        }
+
+        div.proj-sec-txt-btn {
+            z-index: 2;
+            width: 96%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        div.project-sec-img  {
+            z-index: 1;
+            height: 100%;
+            width: calc(100% - 25px);
+            margin-left: 25px;
+            background-size: 100%;
+            transition: ease 0.5s;
+            background-position: center;
+
+            &:hover {
+                background-size: 110%;
+            }
         }
     }
 
-    div.project-sec-img {
-        height: 100%;
-        width: 100%;
-        background-color: grey;
-        margin-left: 35px;
+    @media screen and (max-width: 900px) {
+        height: auto;
+        margin-right: 30px;
+        margin-left: 30px;
+
+        div.project-sec-content {
+            display: flex;
+            flex-direction: column-reverse;
+            
+
+            h1 {
+                top: 0px;
+                left: 0px;
+                transform: translateX(50%);
+            }
+
+            div.project-sec-img {
+                background-color: gray;
+                margin-top: 100px;
+                height: 100px;
+            }
+        }
     }
 }
