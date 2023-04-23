@@ -1,63 +1,84 @@
 @import '../../../base.scss';
 
-@mixin spinIconDefaults {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    height: 70px;
-    width: 70px;
-}
-
 .about-section {
     background-color: $bg-color;
-    position: relative;
     padding: 35px;
     margin-bottom: 30px;
     width: calc(30vw - 45px);
     height: calc(50vh - 45px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
-    span.spin-icon {
-        div.st {
-            @include spinIconDefaults;
-            background-color: white;
-            animation: rotate1 35s linear infinite;
-        }
+    div.about-section-content {
+        position: relative;
         
-        div.nd {
-            @include spinIconDefaults;
-            animation: rotate2 35s linear infinite;
-            transform: rotate(45deg);
-            border: solid 5px white;
-        }
-
-        @keyframes rotate1 { 
-            from { transform: rotate(0deg); } 
-            to { transform: rotate(360deg); } 
-        }
-
-        @keyframes rotate2 { 
-            from { transform: rotate(0deg); } 
-            to { transform: rotate(-360deg); } 
-        }
-    }
-
-    div.about-sec-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        height: 100%;
-
         h2 {
             font-size: $title-font-size;
             margin-bottom: 25px;
+            max-width: 80%;
+        }
+
+        h2:nth-child(3) {
+            display: none;
+        }
+
+        span.star-icons {
+            
+            img {
+                transition: opacity ease 0.2s;
+                height: 100px;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            
+            img:nth-child(1) {
+                z-index: 3;
+                transform: rotate(45deg);
+                opacity: 1;
+            }
+                    
+            img:nth-child(2) {
+                z-index: 2;
+            }
+                    
+            img:nth-child(3) {
+                transform: rotate(45deg);
+                z-index: 1;
+            }
+                    
+            &:hover {
+                img:nth-child(1) {
+                   opacity: 0;
+                }
+            }
         }
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1000px) {
         width: calc(100vw - 60px);
         height: auto;
         margin-right: 30px; 
         margin-left: 30px;
-        margin-top: 30px; 
+        margin-top: 30px;
+
+        a.white-btn {
+            font-size: 0.6rem;
+            height: 60px;
+        }
+
+        div.about-section-content {
+            min-height: 120px;
+            h2:nth-child(2) {
+                display: none;
+            }
+            h2:nth-child(3) {
+                display: block;
+                max-width: 80%;
+                margin-top: 10px;
+                font-size: 1.4rem;
+            }
+        }
     }
 }

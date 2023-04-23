@@ -61,6 +61,7 @@ const ProjectSection = () => {
 
     return (
         <div className='project-section'>
+
             <div className='project-sec-content'>
                 <div className='proj-sec-txt-btn'>
                     <h1>{currentProject.title}</h1>
@@ -72,6 +73,17 @@ const ProjectSection = () => {
                     style={{backgroundImage: `url(${currentProject.url})`}}>
                 </div>
             </div>
+
+            <div className='project-sec-content-responsive'>
+                <h1>{currentProject.title}</h1>
+                <div 
+                    className='project-sec-img' 
+                    style={{backgroundImage: `url(${currentProject.url})`}}>
+                </div>
+                <p>{currentProject.paragraph}</p>
+                <Button to='/projects' className='white-btn'>view all projects</Button>
+            </div>
+
         </div>
     )
 }

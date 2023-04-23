@@ -15,4 +15,25 @@
     a.contact-btn {
         width: 32%;
     }
+
+    @media screen and (max-width: 1000px) {
+        margin-bottom: 30px;
+        margin-right: 30px;
+        margin-left: 30px;
+        height: auto;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        a.white-btn {
+            width: 100%;
+            font-size: 0.6rem;
+            height: 60px;
+        }
+
+        h2 {
+            margin-left: 0px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+    }
 }
