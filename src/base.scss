@@ -1,46 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon&display=swap');
 @import 'reset';
 
-$sec-font-size: 1rem;
+$title-font-size: 1rem;
+$big-title-font-size: 2.4rem;
+$txt-font-size: 0.45rem;
 $bg-color: #140F0F;
 
-@mixin sectionDefaults {
-    padding: 35px;
-    div {
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
+@mixin pageDefaults {
+    margin: 30px;
+    background-color: #140F0F;
+    height: calc(100vh - 60px);
+    width: calc(100vw - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        h2 {
-            font-size: $sec-font-size;
-            margin-bottom: 25px;
-        }
+@mixin btnDefaults($absolute: false) {
+    font-size: $txt-font-size;
+    cursor: pointer;
+    
+    @if($absolute) {
+        position: absolute;
+        top: 70px;
+        left: 280px;
     }
 }
 
 html {
     background-color: #FD7B32;
-    font-size: 45px;
+    font-size: 40px;
 }
 
 h1, h2, p {
     color: white;
 }
 
-h2, button, p {
+h1, h2, button, p {
     font-family: 'IM FELL French Canon';
     font-style: normal;
     font-weight: 400;
 }
 
 .white-btn {
+    @include btnDefaults;
     color: #140F0F;
-    font-size: 0.45rem;
-    cursor: pointer;
     background-color: white;
     display: flex;
     height: 50px;
     justify-content: center;
+}
+
+.arrow-btn {
+    @include btnDefaults($absolute: true);
+    color: white;
+
+    img {
+        height: 15px;
+        margin-right: 7px;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
