@@ -2,6 +2,7 @@
 
 .contact-page {
     @include pageDefaults;
+    justify-content: center;
 
     h2 {
         font-size: $title-font-size;
@@ -25,21 +26,21 @@
             }
 
             img.github-icon {
-                height: 25px;
-                margin-right: 7px;
+                height: 20px;
+                margin-right: 10px;
                 transform: translateY(5px);
             }
 
             img.linkedin-icon {
-                height: 25px;
-                margin-right: 7px;
+                height: 19px;
+                margin-right: 10px;
                 transform: translateY(5px);
             }
 
             img.mail-icon {
-                height: 20px;
-                margin-right: 7px;
-                transform: translateY(5px);
+                height: 15px;
+                margin-right: 10px;
+                transform: translate(-2px, 5px);
             }
 
             &:hover {
