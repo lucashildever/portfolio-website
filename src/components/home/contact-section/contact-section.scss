@@ -1,12 +1,15 @@
 @import './../../../base.scss';
 
 .contact-section {
-    padding: 35px;
+    background-color: $bg-color;
     display: flex;
     align-items: center;
+    padding: 35px;
+    height: calc(25vh - 30px);
+
     h2 {
         margin-left: 35px;
-        font-size: $sec-font-size;
+        font-size: $title-font-size;
     }
 
     a.contact-btn {
