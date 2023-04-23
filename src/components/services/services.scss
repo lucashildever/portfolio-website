@@ -1,0 +1,21 @@
+@import '../../base.scss';
+
+.services-page {
+    @include pageDefaults;
+    justify-content: center;
+
+    p {
+        width: 370px;
+    }
+
+    h2 {
+        font-size: $title-font-size;
+    }
+
+    p {
+        font-size: $txt-font-size;
+        text-align: justify;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
