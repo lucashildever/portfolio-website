@@ -47,4 +47,18 @@ $margin-content: 50px;
         background-position: center;
         transition: ease 0.5s;
     }
+
+    @media screen and (max-width: 1000px) {
+        max-width: 80%;
+        h1 { font-size: $title-responsive; }
+        p { font-size: $txt-responsive; }
+
+        div.project-btns { 
+            flex-direction: column;
+            a:nth-child(1) {
+                margin-bottom: 30px;
+            }
+            a { @include whiteBtnResponsive; }
+        }
+    }
 }
