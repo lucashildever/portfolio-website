@@ -30,7 +30,7 @@ const ProjectSection = () => {
         setCurrentProject({
             title: projects[val].title,
             paragraph: sliceParagraph(projects[val].desc),
-            url: projects[val].img
+            url: projects[val].img,
         })
     }
 
