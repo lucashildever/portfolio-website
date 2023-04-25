@@ -6,6 +6,16 @@ $big-title-font-size: 2.4rem;
 $txt-font-size: 0.45rem;
 $bg-color: #140F0F;
 
+$big-title-responsive: 2.6rem;
+$title-responsive: 1.4rem;
+$txt-responsive: 0.6rem;
+
+@mixin whiteBtnResponsive {
+    height: 60px;
+    width: 100%;
+    font-size: $txt-responsive;
+}
+
 @mixin pageDefaults {
     margin: 30px;
     background-color: #140F0F;
@@ -16,15 +26,9 @@ $bg-color: #140F0F;
     align-items: center;
 }
 
-@mixin btnDefaults($absolute: false) {
+@mixin btnDefaults {
     font-size: $txt-font-size;
     cursor: pointer;
-    
-    @if($absolute) {
-        position: absolute;
-        top: 70px;
-        left: 280px;
-    }
 }
 
 html {
@@ -52,7 +56,7 @@ h1, h2, button, p {
 }
 
 .arrow-btn {
-    @include btnDefaults($absolute: true);
+    @include btnDefaults;
     color: white;
 
     img {
