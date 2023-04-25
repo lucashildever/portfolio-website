@@ -21,6 +21,7 @@ const Projects = () => {
                             live={item.live}
                             code={item.code}
                             img={item.img}
+                            key={item.id}
                         />
                     )
             }
