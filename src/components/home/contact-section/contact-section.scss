@@ -7,9 +7,14 @@
     padding: 35px;
     height: calc(25vh - 30px);
 
-    h2 {
-        margin-left: 35px;
-        font-size: $title-font-size;
+    div.contact-section-txt {
+        width: 68%;
+        display: flex;
+        justify-content: center;
+
+        h2 {
+           font-size: $title-font-size;
+        }
     }
 
     a.contact-btn {
@@ -24,15 +29,10 @@
         flex-direction: column-reverse;
         align-items: center;
 
-        a.white-btn {
-            width: 100%;
-            font-size: 0.6rem;
-            height: 60px;
-        }
+        a.white-btn { @include whiteBtnResponsive;}
 
-        h2 {
-            margin-left: 0px;
-            font-size: 1.4rem;
+        div.contact-section-txt h2 {
+            font-size: $title-responsive;
             margin-bottom: 20px;
         }
     }
