@@ -68,3 +68,16 @@ h1, h2, button, p {
         text-decoration: underline;
     }
 }
+
+.show-content {
+    transition: ease 0.5s;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.hide-content {
+    transition: ease 0.5s;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
