@@ -29,7 +29,24 @@ function App() {
       },
       {
         path: 'projects',
-        element: <Projects/>
+        children: [
+          {
+            index: true,
+            element: <Projects/>,
+          },
+          {
+            path: 'development',
+            element: <h1>dev</h1>,
+          },
+          {
+            path: 'design-uxui',
+            element: <h1>design</h1>,
+          },
+          {
+            path: 'illustration',
+            element: <h1>illustration</h1>,
+          },
+        ]
       },
       {
         path: 'services',
