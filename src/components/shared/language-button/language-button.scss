@@ -1,0 +1,24 @@
+@import '../../../base.scss';
+
+.language-button {  
+    position: absolute;
+    left: 30px;
+    top: -15px;
+    cursor: pointer;
+
+    img {
+        height: 15px;
+        margin-right: 5px;
+    }
+
+    span {
+        font-size: $txt-font-size;
+        color: $bg-color;
+        font-weight: 500;
+    }
+
+    &:hover {
+        span { color: white; }
+        img { filter: brightness(0) invert(1); }
+    }
+}

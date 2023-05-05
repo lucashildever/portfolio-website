@@ -1,7 +1,8 @@
 @import '../../base.scss';
 
-.projects-page {
+.development-page, 
+.design-uxui-page,
+.illustration-page {
     @include pageDefaults;
     overflow-y: auto;
-    padding-bottom: 100px;
 }

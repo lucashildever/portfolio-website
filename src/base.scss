@@ -31,6 +31,10 @@ $txt-responsive: 0.6rem;
     cursor: pointer;
 }
 
+* {
+    transition: ease 0.7s;
+}
+
 html {
     background-color: #FD7B32;
     font-size: 40px;
@@ -40,7 +44,7 @@ h1, h2, p {
     color: white;
 }
 
-h1, h2, button, p {
+h1, h2, button, p, span {
     font-family: 'IM FELL French Canon';
     font-style: normal;
     font-weight: 400;
@@ -80,4 +84,3 @@ h1, h2, button, p {
     opacity: 0;
     transform: translateY(-10px);
 }
-

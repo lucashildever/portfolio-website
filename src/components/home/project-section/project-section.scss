@@ -1,6 +1,6 @@
- @import '../../../base.scss';
+@import '../../../base.scss';
 
- @mixin imageDefaults {
+@mixin imageDefaults {
     background-size: 100%;
     transition: ease 0.5s;
     background-position: center;
@@ -8,9 +8,9 @@
     &:hover {
         background-size: 110%;
     }
- }
+}
  
- .project-section {
+.project-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,11 +18,11 @@
     padding: 35px;
     margin-bottom: 30px;
     height: calc(75vh - 60px);
-
+    
     div.project-sec-content-responsive {
         display: none;
     }
-   
+
     div.project-sec-content {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -30,6 +30,7 @@
         align-items: center;
         position: relative;
         
+
         h1 {
             font-size: $big-title-font-size;
             position: absolute;
@@ -40,7 +41,7 @@
         p {
             font-size: 0.45rem;
             text-align: justify;
-            margin-bottom: 70px;
+            margin-bottom: 60px;
         }
 
         div.proj-sec-txt-btn {
@@ -57,8 +58,25 @@
             height: 100%;
             width: calc(100% - 25px);
             margin-left: 25px;
+            position: relative;
 
             @include imageDefaults;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background: rgb(0,0,0);
+                background: 
+                    linear-gradient(163deg, 
+                    rgba(0,0,0,0.5186449579831933) 0%, 
+                    rgba(0,0,0,0.31976540616246496) 18%, 
+                    rgba(0,0,0,0.15449929971988796) 34%, 
+                    rgba(0,0,0,0) 50%);
+            }
         }
     }
 
