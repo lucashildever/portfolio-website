@@ -1,28 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../../states/store'
 
-import Button from '../../shared/Button'
+import useShowContent from '../../../hooks/useShowContent'
+import useSwitchContent from '../../../hooks/useSwitchContent'
+
 import './services-section.scss'
-import useSwitcher from '../../../hooks/useSwitcher'
+import Button from '../../shared/Button'
 
 const ServicesSection = () => {
 
-    const [content, setContent] = useState<string>('Creative Web solutions & ')
-
-    const switchContent = useSwitcher(3000)
-
-    useEffect(() => {
-        if(switchContent) {
-            setContent('Creative Web Solutions &')
-        } else {
-            setContent('Outstanding Design!')
-        }
-    }, [switchContent])
+    const language = useSelector((state: RootState) => state.language.value)
+    const showContent = useShowContent(900)
+    const content = useSwitchContent('services', 500)
 
     return (
-        <div className='services-section'>
+        <div className={`services-section ${showContent ? 'show-content' : 'hide-content'}`}>
             <div className='services-sec-content'>
-                <h2>{content}</h2>
-                <Button to='/services' className='white-btn'>services</Button>
+                <h2>{content || 'Creative Web solutions & '}</h2>
+                <Button to='/services' className='white-btn'>
+                    {language ? 'serviços' : 'services'}
+                </Button>
             </div>
         </div>
     )

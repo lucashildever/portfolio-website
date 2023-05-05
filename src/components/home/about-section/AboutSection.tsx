@@ -1,4 +1,6 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../../states/store'
 import './about-section.scss'
 
 import Button from '../../shared/Button'
@@ -6,8 +8,11 @@ import Button from '../../shared/Button'
 import whiteStar from './w-star.svg'
 import orangeStar from './o-star.svg'
 import useSwitcher from '../../../hooks/useSwitcher'
+import useShowContent from '../../../hooks/useShowContent'
 
 const AboutSection = () => {
+
+    const language = useSelector((state: RootState) => state.language.value)
 
     interface Content {
         content: ReactNode
@@ -35,8 +40,10 @@ const AboutSection = () => {
         }
     }, [switchContent])
 
+    const showContent = useShowContent(300)
+
     return (
-        <div className='about-section'>
+        <div className={`about-section ${showContent ? 'show-content' : 'hide-content'}`}>
             <div className='about-section-content'>
                 <span className='star-icons'>
                     <img src={whiteStar} alt='white star icon'/>

@@ -4,32 +4,28 @@ import './project-section.scss'
 import type { RootState } from '../../../states/store'
 import { useSelector } from 'react-redux'
 
+import useShowContent from '../../../hooks/useShowContent'
+
 import Button from '../../shared/Button'
 
 const ProjectSection = () => {
 
-    type Projects = {
+    const projects = useSelector((state: RootState) => state.projects.value)
+    const language = useSelector((state: RootState) => state.language.value)
+    
+    interface Projects {
         title: string,
-        paragraph: string,
         url: string,
     }
     
-    const [currentProject, setCurrentProject] = useState<Projects>({title: '', paragraph: '', url: ''})
-
-    const projects = useSelector((state: RootState) => state.projects.value)
-
-    const sliceParagraph = (paragraph: string): string => {
-        if(paragraph.length > 140) {
-            return paragraph.slice(0, 140) + '...'
-        } else {
-            return paragraph
-        }
-    }
+    const [currentProject, setCurrentProject] = useState<Projects>({
+        title: '',
+        url: '',
+    })
 
     const updateProject = (val: number): void => {
         setCurrentProject({
             title: projects[val].title,
-            paragraph: sliceParagraph(projects[val].desc),
             url: projects[val].img,
         })
     }
@@ -59,14 +55,30 @@ const ProjectSection = () => {
         updateImage()
     }, [])
 
+    const showContent = useShowContent(500)
+
     return (
-        <div className='project-section'>
+        <div className={`project-section ${showContent ? 'show-content' : 'hide-content'}`}>
 
             <div className='project-sec-content'>
                 <div className='proj-sec-txt-btn'>
                     <h1>{currentProject.title}</h1>
-                    <p>{currentProject.paragraph}</p>
-                    <Button to='/projects' className='white-btn'>view all projects</Button>
+                    <p>
+                        {
+                            language ? 
+                                'Mais de 100 projetos criados nas áreas de desenvolvimento web, UX/UI e design gráfico. São mais de 3 anos fornecendo servicos de alta qualidade para clientes de todo o mundo. Clique abaixo para ver todos os projetos.'
+                            :
+                                'More than 100 projects created in web development, UX/UI and graphic design fields. I\'ts 3+ years providing high-end services for clients all over the world. click below to view all the projects.'
+                        }
+                    </p>
+                    <Button to='/projects' className='white-btn'>
+                        {
+                            language ?
+                                'ver todos os projetos'
+                            :
+                                'view all projects'
+                        }
+                    </Button>
                 </div>
                 <div 
                     className='project-sec-img' 
@@ -80,8 +92,22 @@ const ProjectSection = () => {
                     className='project-sec-img' 
                     style={{backgroundImage: `url(${currentProject.url})`}}>
                 </div>
-                <p>{currentProject.paragraph}</p>
-                <Button to='/projects' className='white-btn'>view all projects</Button>
+                <p>
+                    {
+                        language ? 
+                            'Mais de 100 projetos criados nas áreas de desenvolvimento web, UX/UI e design gráfico. São mais de 3 anos fornecendo servicos de alta qualidade para clientes de todo o mundo. Clique abaixo para ver todos os projetos.'
+                        :
+                            'More than 100 projects created in web development, UX/UI and graphic design fields. I\'ts 3+ years providing high-end services for clients all over the world. click below to view all the projects.'
+                    }
+                </p>
+                <Button to='/projects' className='white-btn'>
+                    {
+                        language ?
+                            'ver todos os projetos'
+                        :
+                            'view all projects'
+                    }
+                </Button>
             </div>
 
         </div>
