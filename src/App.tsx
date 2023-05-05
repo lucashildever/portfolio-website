@@ -11,6 +11,9 @@ import Projects from './components/projects/Projects'
 import Services from './components/services/Services'
 import Contact from './components/contact/Contact'
 import Home from './components/home/Home'
+import DevelopmentPage from './components/projects-pages/development/DevelopmentPage'
+import Designuxui from './components/projects-pages/design-uxui/Designuxui'
+import Illustration from './components/projects-pages/illustrations/Illustration'
 
 function App() {
 
@@ -36,15 +39,15 @@ function App() {
           },
           {
             path: 'development',
-            element: <h1>dev</h1>,
+            element: <DevelopmentPage/>,
           },
           {
-            path: 'design-uxui',
-            element: <h1>design</h1>,
+            path: 'ux-ui',
+            element: <Designuxui/>,
           },
           {
             path: 'illustration',
-            element: <h1>illustration</h1>,
+            element: <Illustration/>,
           },
         ]
       },
