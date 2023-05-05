@@ -4,6 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 interface Project {
     value: {
         id: number,
+        type: string,
         title: string,
         techs: string[],
         img: string,
@@ -18,6 +19,7 @@ const initialState: Project = {
     value: [
         {
             id: 1,
+            type: 'dev',
             title: 'Coint Co.',
             techs: ["JavaScript","HTML","CSS"],
             img: 'projects-images/cointco.png',
@@ -28,6 +30,7 @@ const initialState: Project = {
         },
         {
             id: 2,
+            type: 'dev',
             title: 'Local Prose',
             techs: ["JavaScript","HTML","CSS"],
             img: 'projects-images/localprose.png',
@@ -38,6 +41,7 @@ const initialState: Project = {
         },
         {
             id: 3,
+            type: 'ux',
             title: 'MovLab',
             techs: ["UI Design","Figma"],
             img: 'projects-images/movlab.png',
@@ -48,6 +52,7 @@ const initialState: Project = {
         },
         {
             id: 4,
+            type: 'ux',
             title: 'Bizout',
             techs: ["UI Design","Figma"],
             img: 'projects-images/bizout.png',
@@ -58,6 +63,7 @@ const initialState: Project = {
         },
         {
             id: 5,
+            type: 'dev',
             title: 'Uno Charge',
             techs: ["JavaScript","HTML","CSS"],
             img: 'projects-images/unocharge.png',
@@ -68,6 +74,7 @@ const initialState: Project = {
         },
         {
             id: 6,
+            type: 'ux',
             title: 'KPO Decor',
             techs: ["UI Design","Figma"],
             img: 'projects-images/kpodecor.png',
@@ -75,6 +82,17 @@ const initialState: Project = {
             live: '',
             desc: 'The project\'s goal was to create a modern and beautiful design concept for an ecommerce focused in interior design.',
             descPt: 'O objetivo deste projeto era criar um design concept moderno e bonito para uma loja online focada em design de interiores.',
+        },
+        {
+            id: 7,
+            type: 'illustra',
+            title: 'F Button',
+            techs: ["Illustration"],
+            img: 'projects-images/fbutton.png',
+            code: '',
+            live: '',
+            desc: 'A buttom illustratin i did in a case stuty.',
+            descPt: 'Illustração de um botão que eu fiz em um estudo de caso',
         },
     ]
 }
