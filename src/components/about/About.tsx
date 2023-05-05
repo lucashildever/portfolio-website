@@ -1,18 +1,22 @@
 import { FC } from 'react'
+import useShowContent from '../../hooks/useShowContent'
 import './about.scss'
 
 import profile from '../../assets/profile.png'
 
-import PageLayout from '../shared/PageLayout'
-import PageArrowBtn from '../shared/PageArrowBtn'
+import PageLayout from '../shared/page-layout/PageLayout'
+import PageArrowBtn from '../shared/page-arrow-btn/PageArrowBtn'
 
 interface AboutProps {
     className?: string
 }
 
 const About: FC<AboutProps> = () => {
+
+    const showContent = useShowContent(1000)
+    
     return(
-        <PageLayout className='about-page'>
+        <PageLayout className={`about-page ${showContent ? 'show-content' : 'hide-content'}`}>
             <div className='img-txt'>
                 <img src={profile} alt='profile picture'/>
                 <h2>Hello, i'm <br/>Lucas Hildever</h2>
