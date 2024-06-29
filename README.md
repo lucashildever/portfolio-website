@@ -2,7 +2,10 @@
 -----
 This is the repository of my personal portfolio created with React.
 
-you can view the live website at <a href="https://www.lucashildever.com">www.lucashildever.com</a> and the backend of this application  can be found here: <a href="https://github.com/lucashildever/projects-api">Projects API</a>.
+you can view the live website at <a href="https://portfolio-lhold.netlify.app/">portfolio-lhold.netlify.app</a> and the backend of this application can be found here: <a href="https://github.com/lucashildever/projects-api">Projects API</a>.
+
+
+***This is my old portfolio. You can view the one I currently use on my website. <a href="https://www.lucashildever.com/">www.lucashildever.com</a>***
 
 -----
 #### Tools used
